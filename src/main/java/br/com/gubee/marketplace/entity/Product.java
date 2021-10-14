@@ -38,5 +38,5 @@ public class Product {
             joinColumns = {@JoinColumn(name = "product_id")},
             inverseJoinColumns = {@JoinColumn(name = "stack_id")}
     )
-    private List<Stack> technologies;
+    private List<Stack> stacks;
 }

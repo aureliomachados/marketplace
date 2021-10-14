@@ -18,6 +18,12 @@ public class ProductController {
 
     private final ProductService productService;
 
+    public List<ProductDTO> findByStack(List<ProductDTO> stacks){
+
+    }
+
+    public List<ProductDTO> findBy
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public MessageResponseDTO add(@RequestBody @Valid ProductDTO productDTO){

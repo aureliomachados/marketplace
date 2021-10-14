@@ -25,5 +25,5 @@ public class ProductDTO {
     private String description;
     private double price;
     private List<TargetMarketDTO> targetMarkets;
-    private List<StackDTO> technologies;
+    private List<StackDTO> stacks;
 }

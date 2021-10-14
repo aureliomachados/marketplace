@@ -1,0 +1,50 @@
+insert into target_market (id, name) values (1, 'Ecommerce');
+insert into target_market (id, name) values (2, 'ERP');
+insert into target_market (id, name) values (3, 'Lojista que não desejam possuir ecommerce');
+insert into target_market (id, name) values (4, 'Loja fisica');
+insert into target_market (id, name) values (5, 'Telecom');
+insert into target_market (id, name) values (6, 'Venda direta');
+insert into target_market (id, name) values (7, 'Mobile First');
+insert into target_market (id, name) values (8, 'Digital Onboarding');
+
+insert into stack (id, name) values (1, 'Java 10');
+insert into stack(id, name) values (2, 'Kotlin');
+insert into stack(id, name) values (3, 'Kafka');
+insert into stack (id, name) values (4, 'Event Stream');
+insert into stack (id, name) values (5, 'Redis');
+insert into stack (id, name) values (6, 'MongoDB');
+insert into stack (id, name) values (7, 'NodeJS');
+insert into stack (id, name) values (8, 'Big Data Analytics');
+insert into stack (id, name) values (9, 'Hadoop');
+insert into stack (id, name) values (10, 'Pig');
+insert into stack (id, name) values (11, 'Cassandra');
+
+insert into product (id, name, description) values (1, 'Gubee Integrador', 'Ferramenta de integração para marketplaces');
+insert into product (id, name, description) values (2, 'Gubee Fretes', 'Ferramenta para gestão e calculo de fretes' );
+insert into product (id, name, description) values (3, 'Gubee AntiFraude', 'Ferramenta especialistas em detecção e prevenção à fraude');
+
+insert into product_market (product_id, market_id) values ( 1, 1 );
+insert into product_market (product_id, market_id) values ( 1, 2 );
+insert into product_market (product_id, market_id) values ( 1, 3 );
+insert into product_market (product_id, market_id) values ( 2, 1 );
+insert into product_market (product_id, market_id) values ( 2, 2 );
+insert into product_market (product_id, market_id) values ( 2, 4 );
+insert into product_market (product_id, market_id) values ( 3, 1 );
+insert into product_market (product_id, market_id) values ( 3, 5 );
+insert into product_market (product_id, market_id) values ( 3, 6 );
+insert into product_market (product_id, market_id) values ( 3, 7 );
+insert into product_market (product_id, market_id) values ( 3, 8 );
+
+insert into product_stack (product_id, stack_id) values ( 1, 1 );
+insert into product_stack (product_id, stack_id) values ( 1, 2 );
+insert into product_stack (product_id, stack_id) values ( 1, 3 );
+insert into product_stack (product_id, stack_id) values ( 1, 4 );
+insert into product_stack (product_id, stack_id) values ( 1, 5 );
+insert into product_stack (product_id, stack_id) values ( 1, 6 );
+insert into product_stack (product_id, stack_id) values ( 2, 7 );
+insert into product_stack (product_id, stack_id) values ( 2, 6 );
+insert into product_stack (product_id, stack_id) values ( 3, 8 );
+insert into product_stack (product_id, stack_id) values ( 3, 9 );
+insert into product_stack (product_id, stack_id) values ( 3, 3 );
+insert into product_stack (product_id, stack_id) values ( 3, 10 );
+insert into product_stack (product_id, stack_id) values ( 3, 11 );
