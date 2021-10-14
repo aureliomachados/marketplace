@@ -14,16 +14,16 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class ProductServiceImpl {
+public class ProductServiceImpl implements ProductService{
 
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     private final ProductMapper productMapper = ProductMapper.INSTANCE;
 
     public MessageResponseDTO add(ProductDTO productDTO){
         Product productToSave = productMapper.toModel(productDTO);
         Product productSaved = productRepository.save(productToSave);
-        return createMessageResponse(productSaved, "Produto");
+        return createMessageResponse(productSaved, "Produto salvo");
     }
 
     public List<ProductDTO> listAll(){
@@ -62,7 +62,7 @@ public class ProductServiceImpl {
 
     private MessageResponseDTO createMessageResponse(Product productSaved, String message) {
         return MessageResponseDTO.builder()
-                .message(message + " " + productSaved.getId())
+                .message(message + " Id: " + productSaved.getId())
                 .build();
     }
 }
