@@ -1,6 +1,6 @@
 java:
   runtime:
-    version: 11
+    version: 8
 server:
   port: 8085
 
