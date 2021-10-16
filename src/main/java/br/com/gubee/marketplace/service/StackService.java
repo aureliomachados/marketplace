@@ -6,7 +6,7 @@ import br.com.gubee.marketplace.exception.StackNotFoundException;
 
 import java.util.List;
 
-public interface TechnologyService {
+public interface StackService {
     public MessageResponseDTO add(StackDTO stackDTO);
     public List<StackDTO> listAll();
     public StackDTO findById(Long id)  throws StackNotFoundException;

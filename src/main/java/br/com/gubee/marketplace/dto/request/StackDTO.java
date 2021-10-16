@@ -12,7 +12,6 @@ import javax.validation.constraints.NotEmpty;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StackDTO {
-
     private Long id;
     @NotEmpty
     private String name;

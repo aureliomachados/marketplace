@@ -6,10 +6,13 @@ import br.com.gubee.marketplace.exception.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+
 public interface ProductService {
     public MessageResponseDTO add(ProductDTO productDTO);
     public List<ProductDTO> listAll();
     public ProductDTO findById(Long id)  throws ProductNotFoundException;
     public void delete(Long id) throws ProductNotFoundException;
     public MessageResponseDTO update(Long id, ProductDTO productDTO) throws ProductNotFoundException;
+    public List<ProductDTO> findByStack(List<String> stacks);
+    public List<ProductDTO> findByMarket(List<String > markets);
 }

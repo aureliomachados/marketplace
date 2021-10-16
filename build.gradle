@@ -6,7 +6,7 @@ plugins {
 
 group = 'br.com.gubee'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 configurations {
 	compileOnly {
@@ -33,6 +33,9 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.0.Beta1"
+	// https://mvnrepository.com/artifact/junit/junit
+	testImplementation 'org.apache.httpcomponents:httpclient'
+	testImplementation 'junit:junit:4.12'
 	testImplementation "org.testng:testng:6.10", "org.easytesting:fest-assert:1.4"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

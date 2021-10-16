@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService{
@@ -46,8 +47,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     public MessageResponseDTO update(Long id, ProductDTO productDTO) throws ProductNotFoundException {
-        Product product = verifyIfExists(id);
-
+        verifyIfExists(id);
         Product productToUpdate = productMapper.toModel(productDTO);
 
         Product productUpdated = productRepository.save(productToUpdate);
@@ -64,5 +64,28 @@ public class ProductServiceImpl implements ProductService{
         return MessageResponseDTO.builder()
                 .message(message + " Id: " + productSaved.getId())
                 .build();
+    }
+
+    public List<ProductDTO> findByStack(List<String> stacks){
+        List<ProductDTO> productDTOS = this.productRepository.findAll().stream()
+                .map(p -> productMapper.toDTO(p))
+                .collect(Collectors.toList());
+
+        return productDTOS.stream()
+                .filter(product -> product.getStacks().stream()
+                        .anyMatch(st -> stacks.stream()
+                                .anyMatch(stack -> st.getName()
+                                        .equalsIgnoreCase(stack)))).collect(Collectors.toList());
+    }
+
+    public List<ProductDTO> findByMarket(List<String > markets){
+        List<ProductDTO> productDTOS = this.productRepository.findAll().stream()
+                .map(p -> productMapper.toDTO(p))
+                .collect(Collectors.toList());
+
+        return productDTOS.stream()
+                .filter(product -> product.getTargetMarkets().stream()
+                        .anyMatch(mk -> markets.stream()
+                                .anyMatch(market -> mk.getName().equalsIgnoreCase(market)))).collect(Collectors.toList());
     }
 }
